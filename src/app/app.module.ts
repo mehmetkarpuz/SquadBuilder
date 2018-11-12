@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +21,7 @@ import { PlayerComponent } from './player/player.component';
     DragDropModule,
     FormsModule    
   ],
+  entryComponents:[PlayerComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

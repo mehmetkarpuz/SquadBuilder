@@ -1,4 +1,9 @@
 <app-player></app-player>
+<ng-template #playercontainer>
+</ng-template>
+
+<input type="text"  [(ngModel)]="playerName" >
+<input type="button" value="Oyuncu Ekle" (click)="createComponent(playerName)">
 
 <div class="surface">
   <div class="pitch">
