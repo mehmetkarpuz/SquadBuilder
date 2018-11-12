@@ -1,0 +1,115 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+// how big?
+$meter: 8px;
+$width: 65;
+$length: 102;
+
+@function meters( $distance ) {
+  $value : $distance * $meter;
+  @if ( $value <= 1px ) { $value : 1px; }
+  @return $value;
+}
+
+* {
+  box-sizing: border-box;
+}
+.surface {
+  background: green;
+  height: meters($width);
+  width: meters($length);
+
+  position: relative;
+  margin: 0 auto;
+  padding: meters(2);
+}
+.pitch {
+  height: 100%;
+  width: 100%;
+  border: meters(0.12) solid white;
+
+  position: relative;
+}
+.half {
+  width: 50%;
+  height: 100%;
+  float: left;
+  display: flex;
+}
+.penalty {
+  width: meters(16.5);
+  height: meters(40);
+  border: meters(0.12) solid white;
+  position: relative;
+  @extend %alignment;
+
+  // just to hide the round next to penalty area
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: green;
+    z-index: 0;
+    left: 0;
+  }
+  .center {
+    z-index: 0;
+  }
+  .goal {
+    z-index: 1;
+  }
+}
+.goal {
+  width: meters(5.5);
+  height: meters(18);
+  border: meters(0.12) solid white;
+  @extend %alignment;
+}
+.center {
+  width: meters(18);
+  height: meters(18);
+  border: meters(0.12) solid white;
+  border-radius: 100%;
+
+  // center it vertically and horizontally
+  position: absolute;
+  $radius : meters(9);
+  top: calc(50% - #{$radius});
+  right: calc(50% - #{$radius});
+}
+
+.half:nth-child(1) {
+  border-right: meters(0.12) solid white;
+
+  .goal,
+  .penalty {
+    border-left: none;
+  }
+  .center {
+    left: meters(2.5);
+    right: auto;
+  }
+}
+
+.half:nth-child(2) {
+  flex-direction: row-reverse;
+
+  div {
+    flex-direction: row-reverse;
+  }
+
+  .goal,
+  .penalty {
+    border-right: none;
+  }
+  .center {
+    right: meters(2.5);
+    left: auto;
+  }
+}
+%alignment {
+  align-self: center;
+  display: flex;
+}
