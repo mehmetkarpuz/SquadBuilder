@@ -16,7 +16,7 @@ export class AppComponent {
 
   createComponent(playerName: string) {
     const factory = this.resolver.resolveComponentFactory(PlayerComponent);
-    const componentRef = this.entry.createComponent(factory);
+    const componentRef = this.entry.createComponent(factory);    
     componentRef.instance.playerName = playerName;
   }
 }

@@ -1,32 +1,40 @@
-<app-player></app-player>
-<ng-template #playercontainer>
-</ng-template>
-
-<input type="text"  [(ngModel)]="playerName" >
-<input type="button" value="Oyuncu Ekle" (click)="createComponent(playerName)">
-
-<div class="surface">
-  <div class="pitch">
-
-      <div class="half">
-
-          <div class="penalty">
-              <div class="goal"></div>
-              <div class="center"></div>
-          </div><!-- penalty -->
-
-      </div><!-- half -->
-
-      <div class="half">
-
-          <div class="penalty">
-              <div class="goal"></div>
-              <div class="center"></div>
-          </div><!-- penalty -->
-
-      </div><!-- half -->
-
-      <div class="center"></div>
-
-  </div><!-- pitch -->
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="surface">
+                    <div class="pitch">
+                        <div class="half">
+                            <div class="penalty">
+                                <div class="goal"></div>
+                                <div class="center"></div>
+                            </div><!-- penalty -->
+                        </div><!-- half -->
+                        <div class="half">
+                            <div class="penalty">
+                                <div class="goal"></div>
+                                <div class="center"></div>
+                            </div><!-- penalty -->
+                        </div><!-- half -->
+                        <div class="center"></div>
+                    </div><!-- pitch -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Player's name" [(ngModel)]="playerName"
+                        aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-info" (click)="createComponent(playerName)" type="button">+</button>
+                    </div>
+                </div>               
+            </div>
+            <div class="row">
+                    <ng-template #playercontainer>
+                        </ng-template>
+            </div>
+        </div>
+    </div>
 </div>
