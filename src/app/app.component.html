@@ -1,28 +1,12 @@
-<div class="container" style="margin-top: 50px;">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row">
-                <div class="surface">
-                    <div class="pitch">
-                        <div class="half">
-                            <div class="penalty">
-                                <div class="goal"></div>
-                                <div class="center"></div>
-                            </div><!-- penalty -->
-                        </div><!-- half -->
-                        <div class="half">
-                            <div class="penalty">
-                                <div class="goal"></div>
-                                <div class="center"></div>
-                            </div><!-- penalty -->
-                        </div><!-- half -->
-                        <div class="center"></div>
-                    </div><!-- pitch -->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
+<main class="" style="opacity: 1;">
+    <div class="static">
+        <h1 class="js-heading" style="opacity: 1; display: block; transform: translateX(0px) translateY(0px);">FOOTBALL
+            LEAGUE</h1>
+        <p class="js-subheading" style="opacity: 1; display: block; transform: translateX(0px) translateY(0px);">Experimental
+            team line-up and football field using CSS 3D transforms.<br><span style="font-size: 11px">Currently buggy
+                in Chrome, will fix soon :)</span></p>
+        <div class="js-switcher switcher" style="opacity: 1; display: block; transform: translateX(0px) translateY(0px);">
+            <div class="col-md-5">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Player's name" [(ngModel)]="playerName"
                         aria-describedby="basic-addon2">
@@ -31,10 +15,37 @@
                     </div>
                 </div>               
             </div>
-            <div class="row">
-                    <ng-template #playercontainer>
-                        </ng-template>
-            </div>
         </div>
     </div>
-</div>
+    <div class="js-stage stage texture">
+        <div class="js-world world">
+            <div class="team js-team">                           
+                <ng-template #playercontainer>
+                </ng-template>
+            </div>
+            <div class="terrain js-terrain">
+                <div class="field field--alt"></div>
+                <div class="field ground">
+                    <div class="field__texture field__texture--gradient"></div>
+                    <div class="field__texture field__texture--gradient-b"></div>
+                    <div class="field__texture field__texture--grass"></div>
+                    <div class="field__line field__line--goal"></div>
+                    <div class="field__line field__line--goal field__line--goal--far"></div>
+                    <div class="field__line field__line--outline"></div>
+                    <div class="field__line field__line--penalty"></div>
+                    <div class="field__line field__line--penalty-arc"></div>
+                    <div class="field__line field__line--penalty-arc field__line--penalty-arc--far"></div>
+                    <div class="field__line field__line--mid"></div>
+                    <div class="field__line field__line--circle"></div>
+                    <div class="field__line field__line--penalty field__line--penalty--far"></div>
+                </div>
+                <div class="field__side field__side--front"></div>
+                <div class="field__side field__side--left"></div>
+                <div class="field__side field__side--right"></div>
+                <div class="field__side field__side--back"></div>
+            </div>
+        </div>
+        <div class="loading js-loading" style="display: none; transform: translateX(0px) translateY(0px); opacity: 0;">PLEASE
+            WAIT...</div>
+    </div>
+</main>
